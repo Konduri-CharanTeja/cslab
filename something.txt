@@ -1,0 +1,109 @@
+
+
+==============================
+EXPERIMENT 16 (IoT + Nmap)
+==============================
+
+[Command Prompt / Terminal (Docker)]
+docker run -d -p 8090:3000 --name juiceshop bkimminich/juice-shop
+
+[Command Prompt - Windows]
+ipconfig
+
+[Kali Linux Terminal]
+nmap -sV 192.168.0.148
+
+
+==============================
+EXPERIMENT 17 (Disk Forensics)
+==============================
+
+[Kali Linux Terminal]
+echo "Cybersecurity Lab Evidence" > evidence.txt
+ls
+lsblk
+
+[Kali Linux Terminal]
+dd if=/dev/zero of=practice_disk.dd bs=1M count=100
+
+[Kali Linux Terminal]
+mkfs.ext4 practice_disk.dd
+
+[Kali Linux Terminal]
+ls -lh /home/kali/disk_image.dd
+cat /home/kali/acquisition.log
+
+[Kali Linux Terminal]
+autopsy
+
+
+==============================
+EXPERIMENT 18 (Log Analysis)
+==============================
+
+[Kali Linux Terminal]
+cd /var/log
+ls
+
+[Kali Linux Terminal]
+last
+
+[Kali Linux Terminal]
+journalctl | less
+journalctl | grep "Failed"
+journalctl | grep ssh
+journalctl | grep -i error
+
+[Kali Linux Terminal]
+cd /var/log/apache2
+ls
+sudo less access.log
+
+[Kali Linux Terminal]
+grep "404" /var/log/apache2/access.log
+
+[Kali Linux Terminal]
+less /var/log/dpkg.log
+
+[Kali Linux Terminal]
+sudo journalctl -f
+
+[Kali Linux Terminal - SSH Simulation]
+sudo apt install openssh-server -y
+sudo service ssh start
+ip a
+ssh fakeuser@localhost
+ssh kali@localhost
+
+[Kali Linux Terminal - Log Analysis]
+journalctl | grep "Failed password"
+journalctl | grep "Failed password" | awk '{print $11}'
+journalctl | grep "Failed password" | awk '{print $11}' | sort | uniq -c | sort -nr
+
+[Kali Linux Terminal]
+sudo lastb
+journalctl --since "10 minutes ago"
+
+
+==============================
+EXPERIMENT 20 (Privacy Audit)
+==============================
+
+[Kali Linux Terminal]
+sudo apt update
+sudo apt install nodejs npm -y
+
+[Kali Linux Terminal]
+sudo npm install -g nativefier
+
+[Kali Linux Terminal]
+nativefier https://web.whatsapp.com
+
+[Kali Linux Terminal]
+cd WhatsAppWeb-linux-x64
+./WhatsAppWeb
+
+
+==============================
+END OF COMMANDS
+==============================
